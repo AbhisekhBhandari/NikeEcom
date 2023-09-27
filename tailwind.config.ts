@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      height:{
+        filterBig: 'calc(100vh - 40px)',
+        filterSmall : 'calc(100vh - 96px)'
+      },
+      fontFamily:{
+        DMSans:[ 'DM Sans', "sans-serif"],
+        Oswald: ['Oswald', 'sans-serif']
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
