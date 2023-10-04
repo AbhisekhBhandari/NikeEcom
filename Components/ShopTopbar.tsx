@@ -2,25 +2,27 @@
 import useScrollDirection from "@/hooks/useScroll";
 import Image from "next/image";
 import React from "react";
-import ShowDrop from '@/Components/ShowDrop'
+import ShowDrop from "@/Components/ShowDrop";
+import useFilterToggle from "@/hooks/useFilterToggle";
 
 const ShopTopbar = () => {
   const scrollUp = useScrollDirection();
+  const  {showFilter, toggleFilter} = useFilterToggle();
+  
   return (
     <div
-      className={`flex items-center text-lg px-9 justify-between h-12  fixed  bg-white w-full z-10 ${
+      className={`flex items-center text-xl px-9 justify-between h-16  fixed  bg-white w-full z-10 ${
         scrollUp ? " top-0" : "top-15"
       }  `}
     >
-      <p>Shoes & Sneakers (0)</p>
+      <p className="text-2xl">Shoes & Sneakers (0)</p>
       <div className="flex items-center gap-8">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2" onClick={toggleFilter}>
           <p>Hide Filters</p>
-          <Image src={'/filter.svg'} alt="Filter" height={24} width={24}/>
+          <Image src={"/filter.svg"} alt="Filter" height={24} width={24} />
         </div>
-  <ShowDrop/>
+        <ShowDrop />
       </div>
-
     </div>
   );
 };

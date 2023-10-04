@@ -15,6 +15,7 @@ const Home = () => {
           latest gear, engaging stories and a worldwide community. It’s all
           here, personalized for you.
         </p>
+        
       </div>
       <Video source={"/Vid2.mp4"} />
       <div className="  md:w-[650px] px-3">

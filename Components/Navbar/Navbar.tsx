@@ -6,7 +6,6 @@ import Link from "next/link";
 import SearchBar from "./SearchBar";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsBag } from "react-icons/bs";
-import {handleScroll , } from '@/utils/upScrollCheck'
 import useScrollDirection from "@/hooks/useScroll";
 
 

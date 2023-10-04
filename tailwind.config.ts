@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens:{
+        'twoGrid': '950px'
+      },
       height:{
         filterBig: 'calc(100vh - 40px)',
         filterSmall : 'calc(100vh - 96px)'

@@ -8,17 +8,15 @@ import { JsxElement } from 'typescript';
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  '&:not(:last-child)': {
-    borderBottom: 0,
-  },
+  borderBottom: `1px solid ${theme.palette.divider}`,
+
   '&:before': {
     display: 'none',
   },
 }));
 type AcordionPropTypes = {
   title: string,
-}
+} 
 
 const AccordionComponent:React.FC<AccordionProps> = ({title, children}) => {
   const [expanded, setExpanded] = useState<boolean>(true);
@@ -36,13 +34,13 @@ const AccordionComponent:React.FC<AccordionProps> = ({title, children}) => {
       handleExpand()
     }}
   >
-    <AccordionSummary>
-      <div className="flex items-center justify-between  w-full">
+    <AccordionSummary >
+      <div className="flex items-center justify-between w-full">
         <p className=' font-semibold'>{title}</p>
         <AiOutlineDown className = {`${expanded && 'rotate-180'} duration-200`}/>
       </div>
     </AccordionSummary>
-    <AccordionDetails>{children}</AccordionDetails>
+    <AccordionDetails className=' -mt-3' >{children}</AccordionDetails>
   </Accordion>
   )
 }
