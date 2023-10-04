@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import { FilterContext } from "@/context/FilterContext";
+import { useContext } from "react";
 
-const useFilterToggle = () => {
-    const [showFilter, setShowFilter] = useState(true);
-    const toggleFilter = () =>{
-        setShowFilter(prev=>!prev)
-    }
-    
-  return {showFilter, toggleFilter}
+
+export default function useFilterToggle(){
+  const values = useContext(FilterContext)
+  if(!values){
+    return new Error('useContext must be used within its provider  ')
+  }
+  return values;
 }
-
-export default useFilterToggle

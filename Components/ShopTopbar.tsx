@@ -4,10 +4,12 @@ import Image from "next/image";
 import React from "react";
 import ShowDrop from "@/Components/ShowDrop";
 import useFilterToggle from "@/hooks/useFilterToggle";
+import { FilterContextType } from "@/types/types";
 
 const ShopTopbar = () => {
   const scrollUp = useScrollDirection();
-  const  {showFilter, toggleFilter} = useFilterToggle();
+  const {showFilter, setShowFilter} = useFilterToggle() as FilterContextType
+
   
   return (
     <div
@@ -17,8 +19,8 @@ const ShopTopbar = () => {
     >
       <p className="text-2xl">Shoes & Sneakers (0)</p>
       <div className="flex items-center gap-8">
-        <div className="flex items-center gap-2" onClick={toggleFilter}>
-          <p>Hide Filters</p>
+        <div className="flex items-center gap-2" onClick={()=>setShowFilter(prev=>!prev)}>
+          <p>{showFilter ? 'Hide' : 'Show'} Filters</p>
           <Image src={"/filter.svg"} alt="Filter" height={24} width={24} />
         </div>
         <ShowDrop />
