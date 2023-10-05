@@ -1,5 +1,5 @@
 
-import Filter from "@/Components/Filter";
+import Filter from "@/Components/Filter/Filter";
 import ProdView from "@/Components/ProdView/ProdView";
 import ShopTopbar from "@/Components/ShopTopbar";
 import React from "react";

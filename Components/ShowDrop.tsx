@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const ShowDrop = () => {
-  const [value, setValue] = useState()
   return (
-    <div>
+    <div className='hidden md:flex cursor-pointer'>
         <label htmlFor='sortFilter' >Sort By:</label>
         <select  id='sortFilter' onChange={(e)=>{console.log(e.target.value);
         }}>

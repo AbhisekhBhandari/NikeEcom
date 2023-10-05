@@ -8,22 +8,28 @@ import { FilterContextType } from "@/types/types";
 
 const ShopTopbar = () => {
   const scrollUp = useScrollDirection();
-  const {showFilter, setShowFilter} = useFilterToggle() as FilterContextType
+  const { showFilter, setShowFilter } = useFilterToggle() as FilterContextType;
 
-  
   return (
     <div
-      className={`flex items-center text-xl px-9 justify-between h-16  fixed  bg-white w-full z-10 ${
+      className={`flex  items-center text-xl px-9 justify-between h-12 md:h-16  fixed select-none overflow-clip bg-white w-full z-10 ${
         scrollUp ? " top-0" : "top-15"
       }  `}
     >
-      <p className="text-2xl">Shoes & Sneakers (0)</p>
-      <div className="flex items-center gap-8">
-        <div className="flex items-center gap-2" onClick={()=>setShowFilter(prev=>!prev)}>
-          <p>{showFilter ? 'Hide' : 'Show'} Filters</p>
+      <p className="md:text-2xl">Shoes & Sneakers (0)</p>
+      <div className="flex  items-center gap-8">
+        <div
+          className="md:flex h-fit bg-purple-300 hidden cursor-pointer items-center gap-2"
+          onClick={() => setShowFilter((prev) => !prev)}
+        >
+          <p>{showFilter ? "Hide" : "Show"} Filters</p>
           <Image src={"/filter.svg"} alt="Filter" height={24} width={24} />
         </div>
         <ShowDrop />
+        <div className="flex text-[0.97rem] font-semibold  rounded-xl h-8 px-4 md:hidden items-center cursor-pointer border">
+          Filters
+          <Image src={"/filter.svg"} alt="Filter" height={20} width={20} />
+        </div>
       </div>
     </div>
   );
